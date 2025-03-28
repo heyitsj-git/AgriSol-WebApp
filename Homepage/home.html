@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriSol</title>
+    <link rel="stylesheet" href="file.css">
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+/>
+</head>
+<body>
+    <!-- Header Section (with logo and navbar) -->
+    <header>
+        <div class="logo">
+            <img src="deam.png" alt="Agrisol Logo">  <!-- Add your logo here -->
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="#manage-crop">Manage Your Crop</a></li>
+                <li><a href="#helpline">Helpline Contact</a></li>
+                <li><a href="dk.html">Agri Dukaan</a></li>   
+            </ul>
+        </nav>
+
+        <div class="weather">
+           
+             <a href="Weather.html">Weather</a>
+        </div>
+
+        <!-- Profile Menu Button -->
+<div id="profile-menu">
+    <div id="menu-icon">&#9776;</div>
+</div>
+
+<!-- Profile Dashboard -->
+    <div id="profile-dashboard" class="hidden">
+        <div class="dashboard-header">
+            <h3>Profile</h3>
+            <span id="close-dashboard">&times;</span>
+            <button id="login-btn">Sign Up/In</button>
+        </div>
+    </div>    
+    </header>
+
+
+    <!-- Main Content Section -->
+    <main>
+        <!-- Home Section -->
+        <section id="home">
+            <h1>Welcome to AgriSol</h1>
+            <p>The Farmer's Best Friend is here!</p>
+            <div id="user-greeting" style="display: none;">
+                Hello, <span id="user-name"></span>
+            </div>
+        
+            
+          
+        </section>
+<!-- Community Section -->
+<section id="community">
+    <h2>Community</h2>
+    <p>Join our community to share knowledge and help each other grow.</p>
+
+    <!-- Community Search Bar -->
+    <div class="community-container">
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search in the community...">
+            <button id="search-btn">Search</button>
+        </div>
+
+       <!-- Blog Upload Section -->
+<div class="upload-section">
+    <h3>Upload Your Blog</h3>
+    <input type="text" id="blog-title" placeholder="Enter Blog Title">
+    <input type="file" id="blog-img" accept="image/*">
+    <button id="upload-blog-btn">Upload</button>
+</div>
+
+<!-- Uploaded Blogs -->
+<div id="uploaded-blogs">
+    <h3>Uploaded Blogs:</h3>
+    <ul id="blog-list"></ul>
+</div>
+
+
+    <!-- Ask Question & Describe Problem Section -->
+    <div class="qa-section">
+        <div class="ask-question">
+            <label for="question">Ask a Question:</label>
+            <textarea id="question" placeholder="Type your question here..."></textarea>
+        </div>
+        <div class="describe-problem">
+            <label for="problem-description">Describe Your Problem:</label>
+            <textarea id="problem-description" placeholder="Describe your agricultural problem..."></textarea>
+        </div>
+    </div>
+</section>
+
+<!-- Manage Your Crop Section -->
+<section id="manage-crop">
+    <h2>Manage Your Crop</h2>
+    <p>Tools and resources to help you manage your crops effectively.</p>
+
+    <!-- Crop Diary -->
+    <div class="crop-diary">
+        <button id="crop-diary-btn">Crop Diary</button>
+        <div id="crop-diary-content" class="submodule-content">
+            <p>Track the growth stages of your crops and note important events.</p>
+            <textarea placeholder="Write your crop diary here..."></textarea>
+        </div>
+    </div>
+
+    <!-- Scan Your Crop -->
+<div class="scan-crop">
+    <button id="scan-crop-btn">Scan Your Crop</button>
+    <div id="scan-crop-content" class="submodule-content">
+        <p>Upload an image of your crop to get a scan for any diseases or issues.</p>
+        <input type="file" id="crop-scan-img" accept="image/*">
+        <a href="scan.html">
+            <button id="scan-btn">Scan</button>
+        </a>
+        <div id="scan-result"></div>
+    </div>
+</div>
+
+
+    <!-- Fertilizer Calculator -->
+    <div class="fertilizer-calculator">
+        <button id="fertilizer-calculator-btn">Fertilizer Calculator</button>
+        <div id="fertilizer-calculator-content" class="submodule-content">
+            <label for="crop-type">Select Crop Type:</label>
+            <select id="crop-type">
+                <option value="wheat">Wheat</option>
+                <option value="rice">Rice</option>
+                <option value="corn">Corn</option>
+            </select>
+            <label for="field-size">Enter Field Size (acres):</label>
+            <input type="number" id="field-size" min="1" max="100">
+            <button id="calculate-fertilizer-btn">Calculate Fertilizer</button>
+            <div id="fertilizer-result"></div>
+        </div>
+    </div>
+
+    <!-- Cultivation Tips -->
+    <div class="cultivation-tips">
+        <button id="cultivation-tips-btn">Cultivation Tips</button>
+        <div id="cultivation-tips-content" class="submodule-content">
+            <p>Get tips for better crop cultivation based on your selected crop type.</p>
+            <div id="cultivation-tips-list"></div>
+        </div>
+    </div>
+
+    <!-- Pests and Disease Alerts -->
+    <div class="pests-disease-alerts">
+        <button id="pests-disease-alerts-btn">Pests and Disease Alerts</button>
+        <div id="pests-disease-alerts-content" class="submodule-content">
+            <p>Stay updated with the latest alerts regarding pests and diseases.</p>
+            <div id="alerts-list"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Helpline Contact Section -->
+<section id="helpline">
+<h2>Helpline Contact</h2>
+<p>If you need assistance, our helpline is here for you.</p>
+
+<!-- Contact Phone Number -->
+<div class="help-contact">
+<h3>Need Help? Call Us:</h3>
+<p>If you need immediate assistance, you can contact our helpline:</p>
+
+<!-- Phone Number with a clickable link -->
+<p>
+    <a href="tel:+91 8779279839" id="help-phone-number" class="phone-link">
+        +91 8779279839
+    </a>
+</p>
+
+<!-- Optional button to call or open a form -->
+<button id="call-help-btn">Call Now</button>
+</div>
+</section>
+
+
+
+<!-- Agri Dukan Section -->
+<section id="agri-dukan">
+<h2>Agri Dukan</h2>
+<p>Explore products related to farming and agriculture in our Agri Dukan.</p>
+
+<!-- Feedback Section -->
+<div class="feedback-section">
+<h3>Your Feedback</h3>
+<p>We value your opinion! Please provide feedback about the products in Agri Dukan.</p>
+
+<!-- Feedback Form -->
+<form id="feedback-form">
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+    <label for="email">Your Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+    <label for="feedback">Your Feedback:</label>
+    <textarea id="feedback" name="feedback" rows="4" placeholder="Enter your feedback here..." required></textarea>
+
+    <button type="submit" id="submit-feedback-btn">Submit Feedback</button>
+</form>
+
+<div id="feedback-result"></div>
+</div>
+</section>
+
+</main>
+
+<!-- Footer Section -->
+<footer>
+<p>&copy; 2025 Agrisol. All rights reserved.</p>
+</footer>
+
+<!-- JavaScript -->
+<script src="main.js"></script>
+</body>
+</html>
