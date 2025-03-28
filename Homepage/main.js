@@ -242,12 +242,11 @@ if (pestsDiseaseAlertsBtn) {
 const callHelpBtn = document.getElementById('call-help-btn');
 if (callHelpBtn) {
     callHelpBtn.addEventListener('click', function() {
-        const phoneNumber = 'tel:+18001234567'; // The helpline number
+        const phoneNumber = 'tel:+917718258406'; // The helpline number
         // For mobile users, this will open the phone dialer
         window.location.href = phoneNumber;
 
-        // If it's not a mobile device, we can show a message as a fallback
-        // alert('For support, call our helpline at +1 (800) 123-4567');
+        
     });
 }
 // Feedback Form Submission
