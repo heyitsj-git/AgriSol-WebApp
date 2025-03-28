@@ -1,0 +1,552 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Section */
+header {
+    background-color: #dad603;  
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+}
+
+header .logo img {
+    height: 50px; /* Adjust based on logo size */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+}
+
+nav ul li a:hover {
+    color: #883b08; /* Hover effect for navigation links */
+}
+#profile-menu {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: #dad603;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#profile-dashboard {
+position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    background: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+#profile-dashboard.show {
+    transform: translateX(0);
+}
+
+#login-btn {
+    padding: 0.7rem 1rem;
+    background-color: #dad603; /* Homepage primary color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#login-btn:hover {
+    background-color: #d49c02; /* Slightly darker shade for hover */
+    transform: scale(1.05);
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: #dad603;
+    color: white;
+    font-size: 18px;
+}
+
+#close-dashboard {
+    cursor: pointer;
+}
+
+
+/* Main Content Sections */
+main {
+    padding: 2rem 3rem;
+}
+
+section {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1, h2 {
+    color: #edf0ec;
+    
+}
+
+section p {
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+#login-btn {
+    padding: 0.7rem 1rem; /* Padding for the button */
+    background-color: #dad603; /* Green background */
+    color: rgb(255, 255, 255); /* White text */
+    border: 1px; /* No border */
+
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1rem; /* Font size */
+    margin-top: 1rem; /* Space above the button */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transition effects */
+}
+
+#login-btn:hover {
+    background-color: #d49c02; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Home Section with Background Image */
+#home {
+    background-image: url('frr.png'); /* Ensure this path is correct */
+    background-size: cover; /* Ensures the background image covers the section */
+    background-position: center center; /* Centers the background image */
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+    height: 80vh; /* Ensures the section takes full height of the viewport */
+    padding: 4rem 3rem;
+    color: white; /* White text for visibility */
+    text-align: center; /* Center the content */
+}
+
+#home h1 {
+    font-size: 3rem; /* Adjust the font size as needed */
+    margin-bottom: 1rm;
+}
+
+#home p {
+    font-size: 1.5rem; /* Adjust the font size as needed */
+    margin-top: 1rem;
+}
+
+.logo {
+    display: flex; /* Center the logo if needed */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    padding: 10px; /* Add some padding around the logo */
+}
+
+.logo img {
+    width: 100px; /* Set a specific width */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 150%; /* Ensu itoesn't exceed the container */
+    max-height: 150px; /* Set a maximum height */
+    object-fit: contain; /* Maintain aspect ratio and fit within the box */
+    transition: transform 0.3s; /* Add a transition for hover effect */
+}
+
+.logo img:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+
+
+/* Style for Community Section */
+.community-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.search-container, .upload-section, #uploaded-blogs {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+.search-container input, .upload-section input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-container button, .upload-section button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ddcf05;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.search-container button:hover, .upload-section button:hover {
+    background-color: #edf57b;
+}
+
+/* Q&A Section */
+.qa-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.ask-question, .describe-problem {
+    flex: 1;
+    min-width: 300px;
+}
+
+.ask-question textarea, .describe-problem textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+/* Add Crop Image Section */
+.add-crop label {
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.add-crop input[type="file"] {
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+/* Ask Question Section */
+.ask-question label,
+.describe-problem label {
+    font-size: 1.2rem;
+ display: block;
+    margin-bottom: 0.5rem;
+}
+
+.ask-question textarea,
+.describe-problem textarea {
+    width: 100%;
+    height: 150px;
+    padding: 0.7rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+/* Describe Your Problem Section */
+.describe-problem {
+    margin-top: 1rem;
+}
+
+/* Manage Your Crop Section */
+#manage-crop {
+    background-color: #fff;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+
+/* Title */
+#manage-crop h2 {
+    color: #e2e600;
+    margin-bottom: 1rem;
+}
+
+/* Submodule Containers */
+.submodule-content {
+    display: none;
+    margin-top: 1rem;
+}
+
+.submodule-content textarea,
+.submodule-content input[type="file"],
+.submodule-content select,
+.submodule-content input[type="number"] {
+    width: 100%;
+    padding: 0.7rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    padding: 0.7rem 1.5rem;
+    background-color: #d6c804;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+button:hover {
+    background-color: #ece800;
+}
+
+/* Buttons */
+button:focus {
+    outline: none;
+}
+
+/* Help Contact Section */
+.help-contact {
+    background-color: #faf9f7;
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.help-contact h3{
+    color: #dbcd03 ;
+    margin-bottom: 1rem;
+}
+
+.help-contact p {
+    font-size: 1.1rem;
+    color: #ddbd04;
+}
+
+.help-contact #help-phone-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #cfc201;
+    text-decoration: none;
+}
+
+.help-contact #help-phone-number:hover {
+    text-decoration: underline;
+}
+
+.help-contact button {
+    padding: 0.7rem 1.5rem;
+    background-color:#e6c302 ;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.help-contact button:hover {
+    background-color: #e9d900 ;
+}
+
+/* Agri Dukan Feedback Section */
+.feedback-section {
+    background-color: #ffffff;
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-section h3 {
+    color: #dac403;
+    margin-bottom: 1rem;
+}
+
+.feedback-section p {
+    font-size: 1.1rem;
+    color: #e7be04;
+}
+
+.feedback-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.feedback-section label {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.feedback-section input,
+.feedback-section textarea {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.feedback-section button {
+    padding: 0.8rem 1.5rem;
+    background-color: #ddd902 ;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.feedback-section button:hover {
+    background-color: #e0d203;
+}
+
+/* Result Message */
+#feedback-result {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: #e4ce06;
+}
+
+/* Specific Section Styling */
+.cultivation-tips p, .pests-disease-alerts p {
+    font-size: 1rem;
+}
+
+.submodule -content ul {
+    list-style-type: none;
+}
+
+.submodule-content ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Footer Section */
+footer {
+    background-color: #535353;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) { 
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 1rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    #home {
+        padding: 2rem 1rem;
+    }
+
+    #home h1 {
+        font-size: 2.5rem;
+    }
+
+    #home p {
+        font-size: 1.2rem;
+    }
+
+    .search-container input {
+        width: 70%;
+    }
+
+    .search-container {
+        flex-direction: column;
+    }
+
+    .search-container button {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .submodule-content {
+        display: block; /* Show submodule content on smaller screens */
+    }
+
+    button {
+        width: 100%; /* Make buttons full width on mobile */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        padding: 0.5rem;
+    }
+
+    nav ul li {
+        margin-left: 1rem;
+        font-size: 1rem;
+    }
+
+    #home h1 {
+        font-size: 2rem;
+    }
+
+    #home p {
+        font-size: 1rem;
+    }
+
+    .feedback-section label {
+        font-size: 1rem;
+    }
+
+    .feedback-section input,
+    .feedback-section textarea {
+        font-size: 0.9rem;
+    }
+
+    .help-contact p {
+        font-size: 0.9rem;
+    }
+} 
