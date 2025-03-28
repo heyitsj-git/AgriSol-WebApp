@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agri Dukaan - Shopping</title>
+    <link rel="stylesheet" href="dk.css">
+    <script src="https://www.paypal.com/sdk/js?client-id=AS_2lyxboRZecErjI_S58vAsRAzGmJWOGENMeIoNp9CsrJCQv01AXL0-23gIY84B4bZwD9b6rh6JmIRf&currency=INR"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Agri Dukaan</h1>
+    </header>
+
+    <div class="product-container">
+        <div class="product">
+            <img src="seed.jpg" alt="Soyabean Seeds">
+            <h3 class="product-title">Soyabean Seeds</h3>
+            <p class="product-price">₹200</p>
+            <button class="add-to-cart" onclick="addToCart('Soyabean Seeds', 200)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="sr.jpg" alt="Pumpkin Seeds">
+            <h3 class="product-title">Pumpkin Seeds</h3>
+            <p class="product-price">₹150</p>
+            <button class="add-to-cart" onclick="addToCart('Pumpkin Seeds', 150)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="wheat.jpg" alt="Wheat Seeds">
+            <h3 class="product-title">Wheat Seeds</h3>
+            <p class="product-price">₹145</p>
+            <button class="add-to-cart" onclick="addToCart('Wheat Seeds', 145)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="sf.jpg" alt="Sunflower Seeds">
+            <h3 class="product-title">Sunflower Seeds</h3>
+            <p class="product-price">₹90</p>
+            <button class="add-to-cart" onclick="addToCart('Sunflower Seeds', 90)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="wt.jpg" alt="Watermelon Seeds">
+            <h3 class="product-title">Watermelon Seeds</h3>
+            <p class="product-price">₹120</p>
+            <button class="add-to-cart" onclick="addToCart('Watermelon Seeds', 120)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="ch.jpg" alt="Chia Seeds">
+            <h3 class="product-title">Chia Seeds</h3>
+            <p class="product-price">₹190</p>
+            <button class="add-to-cart" onclick="addToCart('Chia Seeds', 190)">Add to Cart</button>
+        </div>
+
+    </div>
+
+    <div class="payment-section">
+        <h2>Cart Summary</h2>
+        <div id="cart-items"></div>
+        <p>Total: <span id="total-price">₹0</span></p>
+        <button onclick="openPaymentModal()">Proceed to Payment</button>
+    </div>
+
+    <div id="payment-modal" class="payment-container" style="display: none;">
+        <h2>Complete Your Payment</h2>
+        <label>Full Name:</label>
+        <input type="text" id="customer-name" required>
+        <label>Address:</label>
+        <input type="text" id="customer-address" required>
+        <label>Pincode:</label>
+        <input type="text" id="customer-pincode" required>
+        
+        <h3>Payment Methods</h3>
+        <div class="payment-options">
+            <label><input type="radio" name="payment-method" value="credit-card" checked> Credit Card</label>
+            <label><input type="radio" name="payment-method" value="paypal" id="paypal-option"> PayPal</label>
+        </div>
+        
+        <div id="paypal-button-container" style="display:none;"></div>
+        
+        <button onclick="processPayment()">Pay Now</button>
+        <button onclick="closePaymentModal()">Cancel</button>
+    </div>
+
+    <div class="bill-section">
+        <h2>Invoice</h2>
+        <div id="invoice-details"></div>
+        <button onclick="downloadInvoice()">Download Bill</button>
+    </div>
+
+<!-- JavaScript -->
+<script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    function addToCart(productName, price) {
+        cart.push({ name: productName, price: price });
+        localStorage.setItem("cart", JSON.stringify(cart));
+        displayCart();
+    }
+
+    function displayCart() {
+        let cartItems = document.getElementById("cart-items");
+        let totalPrice = 0;
+        cartItems.innerHTML = "";
+
+        cart.forEach((item, index) => {
+            cartItems.innerHTML += `<p>${item.name} - ₹${item.price} <button onclick="removeFromCart(${index})">❌</button></p>`;
+            totalPrice += item.price;
+        });
+
+        document.getElementById("total-price").textContent = `₹${totalPrice}`;
+    }
+
+    function removeFromCart(index) {
+        cart.splice(index, 1);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        displayCart();
+    }
+
+    function openPaymentModal() {
+        document.getElementById("payment-modal").style.display = "block";
+    }
+
+    function closePaymentModal() {
+        document.getElementById("payment-modal").style.display = "none";
+    }
+
+    function processPayment() {
+        let name = document.getElementById("customer-name").value;
+        let address = document.getElementById("customer-address").value;
+        let pincode = document.getElementById("customer-pincode").value;
+        let totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
+
+        if (!name || !address || !pincode) {
+            alert("Please fill all details!");
+            return;
+        }
+        
+        alert(`Payment successful! Total amount: ₹${totalPrice}`);
+        generateInvoice(name, address, pincode, totalPrice);
+        clearCart();
+        closePaymentModal();
+    }
+
+    function generateInvoice(name, address, pincode, totalPrice) {
+        const { jsPDF } = window.jspdf;
+        let doc = new jsPDF();
+        doc.text("Invoice", 10, 10);
+        doc.text(`Name: ${name}`, 10, 20);
+        doc.text(`Address: ${address}`, 10, 30);
+        doc.text(`Pincode: ${pincode}`, 10, 40);
+        doc.text("Items Purchased:", 10, 50);
+        let y = 60;
+        cart.forEach(item => {
+            doc.text(`${item.name} - ₹${item.price}`, 10, y);
+            y += 10;
+        });
+        doc.text(`Total Price: ₹${totalPrice}`, 10, y + 10);
+        doc.save("Invoice.pdf");
+    }
+
+    function clearCart() {
+        cart = [];
+        localStorage.removeItem("cart");
+        displayCart();
+    }
+
+    document.addEventListener("DOMContentLoaded", displayCart);
+
+</script>
+</body>
+</html>
