@@ -59,7 +59,7 @@ AgriSol addresses these through a comprehensive web application that combines re
 ### 🗄️ Database
 - **MongoDB** – NoSQL database used for storing user data, crop information, and market insights.
 
-### Download the [Crop-Pest-Detection Dataset](https://www.kaggle.com/datasets/nirmalsankalana/crop-pest-and-disease-detection) from here.
+### 🗂️ Download the [Crop-Pest-Detection Dataset](https://www.kaggle.com/datasets/nirmalsankalana/crop-pest-and-disease-detection) from here.
 ---
 
 ## 🧪 AI-Powered Functionality
