@@ -54,10 +54,12 @@ AgriSol addresses these through a comprehensive web application that combines re
 - **Python** – Core language for AI and ML integration.
 - **Flask** – Lightweight Python web framework to serve AI endpoints.
 - **OpenCV** – For image analysis and disease detection using computer vision.
-
+- **Kaggle** - A source for crop pest detection dataset.
+  
 ### 🗄️ Database
 - **MongoDB** – NoSQL database used for storing user data, crop information, and market insights.
 
+# Download the [Crop-Pest-Detection Dataset](https://www.kaggle.com/datasets/nirmalsankalana/crop-pest-and-disease-detection) from here.
 ---
 
 ## 🧪 AI-Powered Functionality
