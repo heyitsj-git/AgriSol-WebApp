@@ -1,4 +1,4 @@
-# AgriSol-WebApp
+## 🌾 AgriSol-WebApp
 
 The Farmer's Agriculture WebApp is designed to transform the agricultural sector by providing 
 farmers with a powerful digital tool to optimize their farming practices. In the face of 
@@ -21,7 +21,7 @@ By leveraging data analytics and cutting-edge technology, the app empowers farme
 make informed decisions, boost their yields, and improve their overall livelihoods. It is 
 designed to be user-friendly, accessible, and adaptable to different regions and types of 
 farming. 
-With this webapp, farmers can: 
+## With this webapp, farmers can: 
 • Improve productivity and operational efficiency 
 • Adopt sustainable practices that minimize environmental impact 
 • Boost their income through better market access and decision-making 
@@ -30,10 +30,9 @@ With this webapp, farmers can:
 
 Ultimately, the Farmer's Agriculture App contributes to a more secure and sustainable food 
 future while empowering rural communities and fostering economic growth.
-![Sign Up](https://github.com/user-attachments/assets/58efce74-5c75-4b19-b7d3-ae128ebbb2e3)
 
+## 🛠️ Tech Stack
 
-![HomePage](https://github.com/user-attachments/assets/1cf70740-f235-4848-8d90-a8808eb1e77d)
 
 
 ![Agri Dukaan](https://github.com/user-attachments/assets/b57e8b58-a47c-407c-b932-ca842cb7ac00)
